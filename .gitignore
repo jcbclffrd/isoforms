@@ -1,0 +1,8 @@
+# Ignore everything by default
+*
+
+# Only track these specific files
+!.gitignore
+!31_align_star_v46.sbatch
+!32_build_star_index_v46.sbatch
+!README.md

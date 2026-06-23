@@ -52,16 +52,22 @@ sbatch --array=1-19%8 31_align_star_v46.sbatch
 
 **File:** `metadata/sample_metadata.tsv`
 
+**Source:** Extracted from GSE174367_bulkRNA_processed.rda.gz supplementary file on GEO ([GSE174367](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE174367))
+
 Sample metadata includes:
-- **19 samples**: 11 AD cases, 8 controls
-- **Columns**: SRR ID, sample number, diagnosis (AD/Control), GSM accession
+- **19 samples**: 11 AD cases, 8 controls (18 with full metadata, 1 missing from targets dataframe)
+- **Key columns**: 
+  - Sample identifiers: SRR, GSM, Sample.ID
+  - Demographics: Age, Sex, Region (frontal cortex)
+  - Clinical: Diagnosis, Tangle.Stage, Plaque.Stage, Braak.Stage, Clinical.Syndrome, APoE
+  - Technical: PMI, RIN, Library.Group, Sequencing.Group
+  - QC metrics: Total reads, alignment rate, duplication rate, ribosomal bases, mRNA bases
 
 **Library Information:**
 - **Strandedness**: Reverse-stranded (use column 3 from STAR ReadsPerGene.out.tab or `-s 2` for featureCounts)
 - **Layout**: Paired-end (100bp or 150bp)
 - **Platform**: Illumina
-
-**Note:** Current metadata is minimal (diagnosis only). Missing standard confounders (age, sex, PMI, batch, etc.).
+- **Region**: Frontal cortex (FC)
 
 ## Output
 

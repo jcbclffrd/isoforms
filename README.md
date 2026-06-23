@@ -48,6 +48,21 @@ sbatch --array=1-19%8 31_align_star_v46.sbatch
 
 19 samples listed in `metadata/bulk_srr_accessions.txt`
 
+## Sample Metadata
+
+**File:** `metadata/sample_metadata.tsv`
+
+Sample metadata includes:
+- **19 samples**: 11 AD cases, 8 controls
+- **Columns**: SRR ID, sample number, diagnosis (AD/Control), GSM accession
+
+**Library Information:**
+- **Strandedness**: Reverse-stranded (use column 3 from STAR ReadsPerGene.out.tab or `-s 2` for featureCounts)
+- **Layout**: Paired-end (100bp or 150bp)
+- **Platform**: Illumina
+
+**Note:** Current metadata is minimal (diagnosis only). Missing standard confounders (age, sex, PMI, batch, etc.).
+
 ## Output
 
 - **STAR Index:** `star_index_v46/`
